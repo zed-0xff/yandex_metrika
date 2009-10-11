@@ -29,7 +29,8 @@ to your `config/environment.rb`, inserting your own COUNTER_ID. This can be disc
      "lib/yandex/metrika.rb",
      "rails/init.rb",
      "test/test_helper.rb",
-     "test/yandex_metrika_test.rb"
+     "test/yandex_metrika_test.rb",
+     "yandex_metrika.gemspec"
   ]
   s.homepage = %q{http://github.com/zed-0xff/yandex_metrika}
   s.rdoc_options = ["--charset=UTF-8"]
