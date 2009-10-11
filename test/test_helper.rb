@@ -1,10 +1,7 @@
+ENV['RAILS_ENV'] = 'test'
+
 require 'rubygems'
 require 'test/unit'
-require 'shoulda'
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'yandex_metrika'
+require File.expand_path(File.dirname(__FILE__) + '/../lib/yandex/metrika.rb')
 
-class Test::Unit::TestCase
-end

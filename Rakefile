@@ -9,9 +9,11 @@ begin
     gem.description = %Q{TODO: longer description of your gem}
     gem.email = "zed.0xff@gmail.com"
     gem.homepage = "http://github.com/zed-0xff/yandex_metrika"
-    gem.authors = ["Andrey "Zed" Zaikin"]
-    gem.add_development_dependency "thoughtbot-shoulda"
+    gem.authors = ["Andrey \"Zed\" Zaikin"]
+    #gem.add_development_dependency "thoughtbot-shoulda"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.add_dependency 'actionpack'
+    gem.add_dependency 'activesupport'
   end
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
