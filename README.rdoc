@@ -1,6 +1,75 @@
-= yandex_metrika
+= Yandex.Metrika [ru]
+(skip to next chapter for description in English)
 
-Description goes here.
+== Установка
+
+Добавьте в <tt>config/environment.rb</tt>:
+
+    config.gem "yandex_metrika", :lib => "yandex/metrika", :source => "http://gemcutter.org"
+
+и выполните команду:
+
+    rake gems:install
+
+== Описание
+
+Быстрая интеграция Яндекс.Метрики в ваше Rails-приложение.
+
+По умолчанию код метрики автоматически вставляется в каждую страницу перед
+закрывающим тэгом \</body>.
+Но сначала нужно корректно сконфигурировать плагин, иначе он будет ругаться.
+
+== Конфигурация
+
+Для этого добавьте следующий код в <tt>config/environment.rb</tt>:
+
+    if defined?Yandex::Metrika
+        Yandex::Metrika.counter_id = '123456'
+    end
+
+А для избежания замусоривания <tt>environment.rb</tt> всякими плагинами -
+можно добавить этот конфиг в <tt>config/initializers/yandex_metrika.rb</tt>
+
+Вместо '123456' нужно вставить ваш личный COUNTER_ID, который можно вытащить
+из javascript-кода, предоставляемого Яндексом: "<tt>new Ya.Metrika(123456)</tt>",
+тут 123456 и есть искомый код.
+
+По умолчанию код метрики вставляется в страницы только при использовании
+*production* окружения. Для активации кода и в *development* нужно сделать так:
+
+    Yandex::Metrika.environments = %w'production development'
+
+Если есть необходимость для каких-то страниц выключить код Яндекс.Метрики - то
+добавть следующий код в соответствующий класс контроллера:
+
+    skip_after_filter :add_yandex_metrika_code
+
+
+= Yandex.Metrika [en]
+
+This plugin enables Yandex.Metrika support in your application. By default
+it will output the metrika code for every single page automatically, if it
+is configured correctly. This is done by adding:
+
+    Yandex::Metrika.counter_id = '123456'
+
+to your <tt>config/environment.rb</tt>, inserting your own COUNTER_ID. This
+can be discovered by looking at the value of "new Ya.Metrika(123456)" in the
+Javascript code.
+
+If you want to disable the code insertion for particular pages, add the
+following to controllers that don't want it:
+
+    skip_after_filter :add_yandex_metrika_code
+
+If you are running rails 2.1 or above add install this by adding:
+
+    config.gem "yandex_metrika", :lib => "yandex/metrika", :source => "http://gemcutter.org"
+
+and run:
+
+    rake gems:install
+
 
 == Note on Patches/Pull Requests
  
