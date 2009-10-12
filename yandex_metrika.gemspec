@@ -38,6 +38,7 @@ to your `config/environment.rb`, inserting your own COUNTER_ID. This can be disc
   s.homepage = %q{http://github.com/zed-0xff/yandex_metrika}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
+  s.rubyforge_project = %q{yandex-metrika}
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{[Rails] Easily enable Yandex.Metrika support in your Rails application.}
   s.test_files = [

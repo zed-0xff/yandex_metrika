@@ -18,6 +18,7 @@ begin
     gem.email = "zed.0xff@gmail.com"
     gem.homepage = "http://github.com/zed-0xff/yandex_metrika"
     gem.authors = ["Andrey 'Zed' Zaikin"]
+    gem.rubyforge_project = 'yandex-metrika'
     #gem.add_development_dependency "thoughtbot-shoulda"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
     gem.add_dependency 'actionpack', '>= 2.3.3'
