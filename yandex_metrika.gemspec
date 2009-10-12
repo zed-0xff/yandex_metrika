@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andrey \"Zed\" Zaikin"]
-  s.date = %q{2009-10-11}
+  s.date = %q{2009-10-12}
   s.description = %q{By default this gem will output Yandex.Metrika code for every page automagically, if it's configured correctly. This is done by adding:
 Yandex::Metrika.counter_id = '123456'
 to your `config/environment.rb`, inserting your own COUNTER_ID. This can be discovered by looking at the value of "new Ya.Metrika(123456)" in the Javascript code.}
@@ -47,14 +47,14 @@ to your `config/environment.rb`, inserting your own COUNTER_ID. This can be disc
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<actionpack>, [">= 0"])
-      s.add_runtime_dependency(%q<activesupport>, [">= 0"])
+      s.add_runtime_dependency(%q<actionpack>, [">= 2.3.3"])
+      s.add_runtime_dependency(%q<activesupport>, [">= 2.3.3"])
     else
-      s.add_dependency(%q<actionpack>, [">= 0"])
-      s.add_dependency(%q<activesupport>, [">= 0"])
+      s.add_dependency(%q<actionpack>, [">= 2.3.3"])
+      s.add_dependency(%q<activesupport>, [">= 2.3.3"])
     end
   else
-    s.add_dependency(%q<actionpack>, [">= 0"])
-    s.add_dependency(%q<activesupport>, [">= 0"])
+    s.add_dependency(%q<actionpack>, [">= 2.3.3"])
+    s.add_dependency(%q<activesupport>, [">= 2.3.3"])
   end
 end

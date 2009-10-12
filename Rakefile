@@ -19,8 +19,8 @@ begin
     gem.authors = ["Andrey \"Zed\" Zaikin"]
     #gem.add_development_dependency "thoughtbot-shoulda"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-    gem.add_dependency 'actionpack'
-    gem.add_dependency 'activesupport'
+    gem.add_dependency 'actionpack', '>= 2.3.3'
+    gem.add_dependency 'activesupport', '>= 2.3.3'
   end
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
