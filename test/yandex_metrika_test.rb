@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/test_helper.rb'
 require 'test/unit'
-require 'rubygems'
+#require 'rubygems'
 require 'mocha'
 RAILS_ENV = 'test'
 
@@ -81,41 +81,41 @@ class MetrikaTest < Test::Unit::TestCase
 
   # Test the before_filter method does what we expect by subsituting the body tags and inserting
   # some code for us automagically.
-  def test_add_metrika_code
+  def test_add_yandex_metrika_code
     # setup our test mixin
     mixin = TestMixin.new
 
     # bog standard body tag
     Yandex::Metrika.defer_load = false
     mixin.response.body = "<body><p>some text</p></body>"
-    mixin.add_metrika_code
+    mixin.add_yandex_metrika_code
     assert_equal mixin.response.body, '<body>Sample Code<p>some text</p></body>'
 
     Yandex::Metrika.defer_load = true
     mixin.response.body = "<body><p>some text</p></body>"
-    mixin.add_metrika_code
+    mixin.add_yandex_metrika_code
     assert_equal mixin.response.body, '<body><p>some text</p>Sample Code</body>'
 
     # body tag upper cased (ignoring this is semantically incorrect)
     Yandex::Metrika.defer_load = false
     mixin.response.body = "<BODY><p>some text</p></BODY>"
-    mixin.add_metrika_code
+    mixin.add_yandex_metrika_code
     assert_equal mixin.response.body, '<BODY>Sample Code<p>some text</p></BODY>'
 
     Yandex::Metrika.defer_load = true
     mixin.response.body = "<BODY><p>some text</p></BODY>"
-    mixin.add_metrika_code
+    mixin.add_yandex_metrika_code
     assert_equal mixin.response.body, '<BODY><p>some text</p>Sample Code</body>'
 
     # body tag has additional attributes
     Yandex::Metrika.defer_load = false
     mixin.response.body = '<body style="background-color:red"><p>some text</p></body>'
-    mixin.add_metrika_code
+    mixin.add_yandex_metrika_code
     assert_equal mixin.response.body, '<body style="background-color:red">Sample Code<p>some text</p></body>'
 
     Yandex::Metrika.defer_load = true
     mixin.response.body = '<body style="background-color:red"><p>some text</p></body>'
-    mixin.add_metrika_code
+    mixin.add_yandex_metrika_code
     assert_equal mixin.response.body, '<body style="background-color:red"><p>some text</p>Sample Code</body>'
   end
 

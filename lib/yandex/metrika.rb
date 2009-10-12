@@ -8,14 +8,14 @@ module Yandex # :nodoc:
     # This module gets mixed in to ActionController::Base
     module Mixin
       # The javascript code to enable Yandex.Metrika on the current page.
-      # Normally you won't need to call this directly; the +add_metrika_code+
+      # Normally you won't need to call this directly; the +add_yandex_metrika_code+
       # after filter will insert it for you.
       def metrika_code
         Metrika.code if Metrika.enabled?(request.format)
       end
       
       # An after_filter to automatically add the metrika code.
-      def add_metrika_code
+      def add_yandex_metrika_code
         if Metrika.defer_load
           response.body.sub! /<\/[bB][oO][dD][yY]>/, "#{metrika_code}</body>" if response.body.respond_to?(:sub!)
         else
