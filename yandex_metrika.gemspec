@@ -8,10 +8,12 @@ Gem::Specification.new do |s|
   s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Andrey \"Zed\" Zaikin"]
+  s.authors = ["Andrey 'Zed' Zaikin"]
   s.date = %q{2009-10-12}
-  s.description = %q{By default this gem will output Yandex.Metrika code for every page automagically, if it's configured correctly. This is done by adding:
-Yandex::Metrika.counter_id = '123456'
+  s.description = %q{[Rails] Easily enable Yandex.Metrika support in your Rails application.
+<br/><br/>
+By default this gem will output Yandex.Metrika code for every page automagically, if it's configured correctly. This is done by adding: <br/>
+Yandex::Metrika.counter_id = '123456' <br/>
 to your `config/environment.rb`, inserting your own COUNTER_ID. This can be discovered by looking at the value of "new Ya.Metrika(123456)" in the Javascript code.}
   s.email = %q{zed.0xff@gmail.com}
   s.extra_rdoc_files = [

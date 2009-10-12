@@ -6,17 +6,18 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "yandex_metrika"
     gem.summary = "[Rails] Easily enable Yandex.Metrika support in your Rails application."
-    gem.description = 'By default this gem will output Yandex.Metrika code for ' +
+    gem.description = gem.summary + "\n<br/><br/>\n" + 
+                      'By default this gem will output Yandex.Metrika code for ' +
                       "every page automagically, if it's configured correctly. " +
-                      "This is done by adding:\n" +
-                      "Yandex::Metrika.counter_id = '123456'\n" +
+                      "This is done by adding: <br/>\n" +
+                      "Yandex::Metrika.counter_id = '123456' <br/>\n" +
                       'to your `config/environment.rb`, inserting your own COUNTER_ID. ' +
                       'This can be discovered by looking at the value of "new Ya.Metrika(123456)" ' +
                       'in the Javascript code.'
 
     gem.email = "zed.0xff@gmail.com"
     gem.homepage = "http://github.com/zed-0xff/yandex_metrika"
-    gem.authors = ["Andrey \"Zed\" Zaikin"]
+    gem.authors = ["Andrey 'Zed' Zaikin"]
     #gem.add_development_dependency "thoughtbot-shoulda"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
     gem.add_dependency 'actionpack', '>= 2.3.3'
