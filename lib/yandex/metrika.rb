@@ -24,7 +24,13 @@ module Yandex # :nodoc:
       end
     end
 
-    class ConfigurationError < StandardError; end
+    class ConfigurationError < StandardError #:nodoc:
+      DEFAULT_MESSAGE = "Yandex::Metrika.counter_id is not set in config/environment.rb or config/initializers/yandex_metrika.rb"
+
+      def initialize(message = nil)
+        super(message || DEFAULT_MESSAGE)
+      end
+    end
 
     @@counter_id = nil
     ##
