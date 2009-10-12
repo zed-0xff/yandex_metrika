@@ -24,6 +24,10 @@ begin
     gem.add_dependency 'actionpack', '>= 2.3.3'
     gem.add_dependency 'activesupport', '>= 2.3.3'
   end
+  Jeweler::GemcutterTasks.new
+  Jeweler::RubyforgeTasks.new do |rubyforge|
+    rubyforge.doc_task = "rdoc"
+  end
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
