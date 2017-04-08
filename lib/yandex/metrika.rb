@@ -69,7 +69,7 @@ module Yandex # :nodoc:
     # correctly for the specified format
     def self.enabled?(format)
       raise ConfigurationError if counter_id.blank?
-      environments.include?(Rails.env) && formats.include?(format.to_sym)
+      environments.include?(Rails.env) && formats.include?(format.to_s.to_sym)
     end
 
     # Construct the javascript code to be inserted on the calling page.
